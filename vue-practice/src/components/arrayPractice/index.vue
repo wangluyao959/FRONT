@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <span class="gotoArray" @click="gotoArray">跳转到路由练习</span>
+  <div class="array">
+      <p>这个是数组联系页面</p>
   </div>
 </template>
 
@@ -12,26 +12,15 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  methods:{
-    gotoArray(){
-      this.$router.push({
-        path:"/arrayPractice"
-      })
-    }
-  },
   components:{
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-.home{
+<style scoped>
+.array{
   width:100%;
   height: 100%;
-  .gotoArray{
-    cursor: pointer;
-    color:#3886FF
-  }
 }
 </style>
