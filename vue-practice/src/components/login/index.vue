@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <span class="gotoArray" @click="gotoArray">跳转到路由练习</span>
+    <span class="gotoArray" @click="gotoArray('arr')">跳转到路由练习</span>
+    <span class="gotoArray" @click="gotoArray('render')">跳转到render函数</span>
   </div>
 </template>
 
@@ -13,10 +14,17 @@ export default {
     }
   },
   methods:{
-    gotoArray(){
-      this.$router.push({
-        path:"/arrayPractice"
-      })
+    gotoArray(type){
+      if(type==="arr"){
+        this.$router.push({
+          path:"/arrayPractice"
+        })
+      }else if(type==="render"){
+        this.$router.push({
+          path:"/renderPractice"
+        })
+      }
+      
     }
   },
   components:{
