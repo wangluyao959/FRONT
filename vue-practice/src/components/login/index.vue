@@ -21,7 +21,7 @@ export default {
         })
       }else if(type==="render"){
         this.$router.push({
-          path:"/renderPractice"
+          path:"/ParentComponent"
         })
       }
       
