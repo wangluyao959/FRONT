@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import login from '@/components/login'
 import ArrayPractice from '@/components/arrayPractice'
 import ParentComponent from '@/components/renderPractice/ParentComponent'
+import Part2 from '@/components/renderPractice/Part2'
 Vue.use(Router)
 
 export default new Router({
@@ -20,7 +21,13 @@ export default new Router({
     {
       path: '/ParentComponent',
       name: 'ParentComponent',
-      component: ParentComponent
+      component: ParentComponent,
+      children:[
+        {
+          path:'/part2',
+          component: Part2,
+        }
+      ]
     }
   ]
 })
