@@ -2,6 +2,7 @@
   <div class="home">
     <span class="gotoArray" @click="gotoArray('arr')">跳转到路由练习</span>
     <span class="gotoArray" @click="gotoArray('render')">跳转到render函数</span>
+    <span class="gotoArray" @click="gotoArray('directive')">跳转到directive练习</span>
   </div>
 </template>
 
@@ -22,6 +23,10 @@ export default {
       }else if(type==="render"){
         this.$router.push({
           path:"/ParentComponent"
+        })
+      }else if(type==="directive"){
+        this.$router.push({
+          path:"/directivePractice"
         })
       }
       

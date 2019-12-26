@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//将Vue全局指令引入Vue实例
+import "./directive/index"
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

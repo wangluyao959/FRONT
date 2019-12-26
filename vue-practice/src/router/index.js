@@ -4,6 +4,7 @@ import login from '@/components/login'
 import ArrayPractice from '@/components/arrayPractice'
 import ParentComponent from '@/components/renderPractice/ParentComponent'
 import Part2 from '@/components/renderPractice/Part2'
+import DirectivePractice from '@/components/directivePractice'
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +29,11 @@ export default new Router({
           component: Part2,
         }
       ]
+    },
+    {
+      path: '/directivePractice',
+      name: 'directivePractice',
+      component: DirectivePractice
     }
   ]
 })
