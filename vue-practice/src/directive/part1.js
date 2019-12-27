@@ -21,11 +21,10 @@ Vue.directive('change-color',{
     el.value='插入前'
   },
   //当绑定元素被插入到DOM元素中
-  inserted:(el)=>{
-    console.log('el :', el);
-    //聚焦元素
-    el.focus();
-    el.value='插入到DOM中'
+  inserted:(el,binding)=>{
+    el.style.backgroundColor=`rgb(${binding.arg*20}, ${binding.arg*40}, ${binding.arg*10})`;
+    el.style.color=`rgb(${255-binding.arg*30}, ${255-binding.arg*20}, ${255-binding.arg*20})`
+    el.style.height=`${binding.arg*10+10}px`;
   }
 })
 

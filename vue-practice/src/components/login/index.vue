@@ -3,6 +3,7 @@
     <span class="gotoArray" @click="gotoArray('arr')">跳转到路由练习</span>
     <span class="gotoArray" @click="gotoArray('render')">跳转到render函数</span>
     <span class="gotoArray" @click="gotoArray('directive')">跳转到directive练习</span>
+    <span class="gotoArray" @click="gotoArray('事件委托')">跳转到事件委托练习</span>
   </div>
 </template>
 
@@ -27,6 +28,10 @@ export default {
       }else if(type==="directive"){
         this.$router.push({
           path:"/directivePractice"
+        })
+      }else if(type==="事件委托"){
+        this.$router.push({
+          path:"/eventDelegation"
         })
       }
       
