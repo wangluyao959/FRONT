@@ -1,40 +1,29 @@
 <template>
-  <div class="home">
-    <span class="gotoArray" @click="gotoArray('arr')">跳转到路由练习</span>
-    <span class="gotoArray" @click="gotoArray('render')">跳转到render函数</span>
-    <span class="gotoArray" @click="gotoArray('directive')">跳转到directive练习</span>
-    <span class="gotoArray" @click="gotoArray('事件委托')">跳转到事件委托练习</span>
+  <div class="home" @click="gotoArray">
+    <span v-for="item in indexList" :key="item.type" :class="`${item.class} ${item.type}`" >{{item.label}}</span>
   </div>
 </template>
 
 <script>
+import { ROUTERMAP,indexList } from "./loginOption";
 export default {
   name: 'login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      indexList,
+      ROUTERMAP
     }
   },
   methods:{
-    gotoArray(type){
-      if(type==="arr"){
-        this.$router.push({
-          path:"/arrayPractice"
-        })
-      }else if(type==="render"){
-        this.$router.push({
-          path:"/ParentComponent"
-        })
-      }else if(type==="directive"){
-        this.$router.push({
-          path:"/directivePractice"
-        })
-      }else if(type==="事件委托"){
-        this.$router.push({
-          path:"/eventDelegation"
-        })
-      }
-      
+    gotoArray(e){
+      //兼容性处理
+      let event = e || window.event;
+      let target = event.target || event.srcElement;
+      this.$router.push({
+          path:`${this.ROUTERMAP[target.className.split(" ")[1]]}`
+      })
+     
     }
   },
   components:{
@@ -42,7 +31,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .home{
   width:100%;

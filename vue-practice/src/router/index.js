@@ -6,6 +6,7 @@ import ParentComponent from '@/components/renderPractice/ParentComponent'
 import Part2 from '@/components/renderPractice/Part2'
 import DirectivePractice from '@/components/directivePractice'
 import EventDelegation from '@/components/eventDelegation'
+import Mixin from '@/components/mixin'
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +41,12 @@ export default new Router({
       path: '/eventDelegation',
       name: 'eventDelegation',
       component: EventDelegation
+      
+    },
+    {
+      path: '/mixinPractice',
+      name: 'mixinPractice',
+      component: Mixin
       
     }
   ]
