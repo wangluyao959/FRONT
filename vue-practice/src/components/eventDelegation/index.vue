@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <ul @click="handelParentClick">
-      <li v-for="index in 9" :key="index" v-change-color:[index]>{{index}}</li>
+      <li v-for="index in 9" :class="`li${index}`" :key="index" v-change-color:[index]>{{index}}</li>
     </ul>
   </div>
 </template>
@@ -18,6 +18,9 @@ export default {
       let event = e || window.event;
       let target = event.target || event.srcElement;
       console.log('e.target :', target);
+      if(target.className==='li7'){
+        target.style.backgroundColor='red';
+      }
     }
   },
   components:{
