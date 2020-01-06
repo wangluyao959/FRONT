@@ -7,6 +7,8 @@ import myMinin from "./components/mixin/minin"
 Vue.mixin(myMinin)
 //将Vue全局指令引入Vue实例
 import "./directive/index"
+import "./globalFilter/index"
+
 
 Vue.config.productionTip = false
 

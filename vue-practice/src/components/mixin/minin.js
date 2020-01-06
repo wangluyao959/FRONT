@@ -1,5 +1,5 @@
 export default {
   created () {
-    console.log("mixin混入")
+    // console.log("mixin混入")
   }
 }

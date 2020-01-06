@@ -7,6 +7,7 @@ import Part2 from '@/components/renderPractice/Part2'
 import DirectivePractice from '@/components/directivePractice'
 import EventDelegation from '@/components/eventDelegation'
 import Mixin from '@/components/mixin'
+import Filter from '@/components/filter'
 Vue.use(Router)
 
 export default new Router({
@@ -47,6 +48,12 @@ export default new Router({
       path: '/mixinPractice',
       name: 'mixinPractice',
       component: Mixin
+      
+    },
+    {
+      path: '/filterPractice',
+      name: 'filterPractice',
+      component: Filter
       
     }
   ]

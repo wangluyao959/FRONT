@@ -3,7 +3,8 @@ export const ROUTERMAP={
   "render":"/ParentComponent",
   "directive":"/directivePractice",
   "事件委托":"/eventDelegation",
-  "mixin":"/mixinPractice"
+  "mixin":"/mixinPractice",
+  "filter":"/filterPractice"
 };
 
 
@@ -31,6 +32,11 @@ export const indexList=[
   {
     type:'mixin',
     label:'跳转到mixin练习',
+    class:'gotoArray'
+  },
+  {
+    type:'filter',
+    label:'跳转到filter练习',
     class:'gotoArray'
   }
 ];
