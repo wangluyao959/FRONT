@@ -10,10 +10,10 @@ import EventDelegation from '@/components/eventDelegation'
 import Mixin from '@/components/mixin'
 import Filter from '@/components/filter'
 import RouterPractice from '@/components/router'
+import ShareComponent from '@/components/router/Share'
 import FOO from '@/components/router/Foo'
 import BAR from '@/components/router/Bar'
-import ShareComponent from '@/components/router/Share'
-
+import Page_404 from '@/components/errorPage'
 
 export default new Router({
   routes: [
@@ -70,7 +70,21 @@ export default new Router({
       path: '/routerPractice/:type',
       name: 'ShareComponent',
       component: ShareComponent,
+      children:[
+        {
+          path: 'foo',
+          component: FOO
+        },
+        {
+          path: 'bar',
+          component: BAR
+        }
+      ]
+    },
+    {
+      path: '*',
+      name: 'Page_404',
+      component: Page_404,
     }
-    
   ]
 })

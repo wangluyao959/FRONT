@@ -11,7 +11,6 @@
 
      <!-- 路由出口 -->
      <!-- 路由匹配到的组件渲染到这里 -->
-      <router-view></router-view>
   </div>
 </template>
 

@@ -10,7 +10,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./style/reset";
 #app{
   height: 100%;
   width: 100%;

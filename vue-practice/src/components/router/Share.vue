@@ -1,8 +1,9 @@
 <template>
   <div class="home" >
-     共享组件-------{{$route.params.type}}-------{{$route.query}}
+     共享组件-------{{$route.params.type}}-------{{$route.query}}<br/>
   
-    <router-link :to="`/routerPractice/${type}`">Go to {{type}}</router-link>
+    <router-link :to="`/routerPractice/${type}/${type}`">Go to {{type}}</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
