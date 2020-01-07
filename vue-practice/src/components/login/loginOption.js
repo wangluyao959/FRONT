@@ -4,7 +4,8 @@ export const ROUTERMAP={
   "directive":"/directivePractice",
   "事件委托":"/eventDelegation",
   "mixin":"/mixinPractice",
-  "filter":"/filterPractice"
+  "filter":"/filterPractice",
+  "router":"/routerPractice"
 };
 
 
@@ -37,6 +38,11 @@ export const indexList=[
   {
     type:'filter',
     label:'跳转到filter练习',
+    class:'gotoArray'
+  },
+  {
+    type:'router',
+    label:'跳转到router练习',
     class:'gotoArray'
   }
 ];

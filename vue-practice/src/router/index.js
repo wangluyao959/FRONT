@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+Vue.use(Router)
 import login from '@/components/login'
 import ArrayPractice from '@/components/arrayPractice'
 import ParentComponent from '@/components/renderPractice/ParentComponent'
@@ -8,7 +9,11 @@ import DirectivePractice from '@/components/directivePractice'
 import EventDelegation from '@/components/eventDelegation'
 import Mixin from '@/components/mixin'
 import Filter from '@/components/filter'
-Vue.use(Router)
+import RouterPractice from '@/components/router'
+import FOO from '@/components/router/Foo'
+import BAR from '@/components/router/Bar'
+import ShareComponent from '@/components/router/Share'
+
 
 export default new Router({
   routes: [
@@ -55,6 +60,17 @@ export default new Router({
       name: 'filterPractice',
       component: Filter
       
+    },
+    {
+      path: '/routerPractice',
+      name: 'routerPractice',
+      component: RouterPractice,
+    },
+    {
+      path: '/routerPractice/:type',
+      name: 'ShareComponent',
+      component: ShareComponent,
     }
+    
   ]
 })

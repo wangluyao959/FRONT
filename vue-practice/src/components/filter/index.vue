@@ -5,7 +5,7 @@
       
     </div>
     <hr/>
-    <div v-for="item in msg_2" :key="item">
+    <div v-for="item in msg_2" :key="item+2">
       {{ item | changMsg}}
       
     </div>
