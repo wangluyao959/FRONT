@@ -50,7 +50,7 @@ export default {
     border-bottom:1px solid #3886FF;
   }
   .gotoArray{
-    font-size: 36px;
+    font-size: 22px;
     cursor: pointer;
     color:#3886FF
   }

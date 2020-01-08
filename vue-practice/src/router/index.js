@@ -13,6 +13,7 @@ import RouterPractice from '@/components/router'
 import ShareComponent from '@/components/router/Share'
 import FOO from '@/components/router/Foo'
 import BAR from '@/components/router/Bar'
+import Home from '@/components/router/Home'
 import Page_404 from '@/components/errorPage'
 
 export default new Router({
@@ -69,10 +70,19 @@ export default new Router({
     {
       path: '/routerPractice/:type',
       name: 'ShareComponent',
-      component: ShareComponent,
+      components: {default : ShareComponent},
+      //如果props被设置为true,则route.params将会被设置为组件的属性。
+      // props:{default : true},
+      //如果props是一个对象，它会被按原样设置为组件属性，当props是静态的时候有用。
+      props: { newsletterPopup: "嘿嘿" },
       children:[
         {
+          path: '',
+          component: Home
+        },
+        {
           path: 'foo',
+          name: 'foo',
           component: FOO
         },
         {

@@ -1,14 +1,24 @@
 <template>
   <div class="home" >
-     共享组件-------{{$route.params.type}}-------{{$route.query}}<br/>
+     共享组件-------{{$route.params}}-------{{$route.query}}<br/>
   
-    <router-link :to="`/routerPractice/${type}/${type}`">Go to {{type}}</router-link>
+    <router-link :to="`/routerPractice/${routerType}/${routerType}`">Go to {{routerType}}</router-link><br/>
+    <router-link :to="`/routerPractice/${routerType}/`">{{routerType}}</router-link><br/>
     <router-view></router-view>
+
+    -------------------------------------------<br/>
+    <div v-if="$route.params.userID">{{$route.params}}</div>
   </div>
 </template>
 
 <script>
 export default {
+  props:{
+    newsletterPopup:{
+      type:String,
+      default:""
+    }
+  },
   data () {
     return {
      
@@ -22,12 +32,14 @@ export default {
     }
   },
   computed:{
-    type(){
+    routerType(){
       return  this.$route.params.type==='foo'?'bar':'foo'
     }
   },
   created(){
-    console.log('create创建 :');
+  },
+  mounted(){
+    console.log('this.newsletterPopup :', this.computed);
   },
   methods:{
  
