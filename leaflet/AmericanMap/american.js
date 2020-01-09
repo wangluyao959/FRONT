@@ -87,21 +87,39 @@ geojson=L.geoJson(statesData,{
 
 
 /**
- * 自定义控件代码
+ * 自定义信息控件代码
 */
 var info=L.control();
 info.onAdd=function(map){
+  console.log('this :', this);
   this._div=L.DomUtil.create('div','info');//创建一个class名为info的div
   this.update();
   return this._div;
 };
 //根据传递的特性属性更新控件的方法
 info.update=function(props){
-  console.log('props :', props);
-  this._div.innerHTML= '<h4>US Population Density</h4>' +  (props ?
+  this._div.innerHTML= '<h4>美国人口密度</h4>' +  (props ?
     '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-    : 'Hover over a state');
+    : '请悬浮在某个州');
 };
 info.addTo(map);
 
 //当用户悬浮到一个州上的时候，我们需要更新控件，所以我们也需要修改监听器。在highlightFeature和resetHighlight
+
+/**
+ * 自定义图例控件代码
+*/
+var Len = L.control({
+  position:"bottomright"
+});
+
+Len.onAdd=function(map){
+  var Ddiv=L.DomUtil.create('div','info lengend');
+  var grades = [0, 10, 20, 50, 100, 200, 500, 1000];
+  for (let i = 0; i < grades.length; i++) {
+    Ddiv.innerHTML+='<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+  }
+  return Ddiv;
+};
+Len.addTo(map);
