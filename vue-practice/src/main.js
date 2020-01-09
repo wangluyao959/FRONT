@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 路由守卫
+import './router/guard';
 import myMinin from "./components/mixin/minin"
 Vue.mixin(myMinin)
 //将Vue全局指令引入Vue实例

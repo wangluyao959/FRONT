@@ -5,7 +5,8 @@ export const ROUTERMAP={
   "事件委托":"/eventDelegation",
   "mixin":"/mixinPractice",
   "filter":"/filterPractice",
-  "router":"/routerPractice"
+  "router":"/routerPractice",
+  "vueX":"/vueXPractice"
 };
 
 
@@ -43,6 +44,11 @@ export const indexList=[
   {
     type:'router',
     label:'跳转到router练习',
+    class:'gotoArray'
+  },
+  {
+    type:'vueX',
+    label:'跳转到vueX练习',
     class:'gotoArray'
   }
 ];

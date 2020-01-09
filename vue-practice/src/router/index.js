@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 import login from '@/components/login'
 import ArrayPractice from '@/components/arrayPractice'
 import ParentComponent from '@/components/renderPractice/ParentComponent'
@@ -14,9 +14,10 @@ import ShareComponent from '@/components/router/Share'
 import FOO from '@/components/router/Foo'
 import BAR from '@/components/router/Bar'
 import Home from '@/components/router/Home'
+import vueX from '@/components/vueX'
 import Page_404 from '@/components/errorPage'
 
-export default new Router({
+export default new VueRouter({
   routes: [
     {
       path: '/',
@@ -65,6 +66,12 @@ export default new Router({
     {
       path: '/routerPractice',
       name: 'routerPractice',
+      // 路由独享守卫
+      // beforeEnter: (to, from, next) => {
+      //   // ...
+      //   console.log('from :', from);
+      //   console.log('to :', to);
+      // },
       component: RouterPractice,
     },
     {
@@ -90,6 +97,11 @@ export default new Router({
           component: BAR
         }
       ]
+    },
+    {
+      path:"/vueXPractice",
+      name:"vueXPractice",
+      component:vueX
     },
     {
       path: '*',

@@ -4,7 +4,10 @@
   
     <router-link :to="`/routerPractice/${routerType}/${routerType}`">Go to {{routerType}}</router-link><br/>
     <router-link :to="`/routerPractice/${routerType}/`">{{routerType}}</router-link><br/>
-    <router-view></router-view>
+
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
 
     -------------------------------------------<br/>
     <div v-if="$route.params.userID">{{$route.params}}</div>
@@ -39,7 +42,7 @@ export default {
   created(){
   },
   mounted(){
-    console.log('this.newsletterPopup :', this.computed);
+    console.log('this.newsletterPopup :', this.$route);
   },
   methods:{
  
@@ -53,6 +56,11 @@ export default {
 .home{
   width:100%;
   height: 100%;
- 
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 }
 </style>

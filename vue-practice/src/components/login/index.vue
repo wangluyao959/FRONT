@@ -23,7 +23,6 @@ export default {
       //兼容性处理
       let event = e || window.event;
       let target = event.target || event.srcElement;
-      console.log('target.className :', Object.keys(ROUTERMAP).indexOf(target.className));
       if(Object.keys(ROUTERMAP).indexOf(target.className)>=0){
         this.$router.push({
           path:`${this.ROUTERMAP[target.className]}`
